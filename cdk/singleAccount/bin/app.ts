@@ -4,9 +4,9 @@ import * as cdk from '@aws-cdk/core';
 import { FargateVpclinkStack } from '../lib/fargate-vpclink-stack';
 import { HttpApiStack } from '../lib/httpApi-stack';
 
-const envUSA = { region: 'us-west-2' };
+const envSeoul = { region: 'ap-northeast-2' };
 
 const app = new cdk.App();
-const fargateVpclinkStack = new FargateVpclinkStack(app, 'FargateVpclinkStack', { env: envUSA });
-new HttpApiStack(app, 'HttpApiStack', fargateVpclinkStack.httpVpcLink, fargateVpclinkStack.httpApiListener , { env: envUSA });
+const fargateVpclinkStack = new FargateVpclinkStack(app, 'FargateVpclinkStack', { env: envSeoul });
+new HttpApiStack(app, 'HttpApiStack', fargateVpclinkStack.httpVpcLink, fargateVpclinkStack.httpApiListener , { env: envSeoul });
 
